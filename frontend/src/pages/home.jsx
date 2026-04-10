@@ -70,7 +70,6 @@ function Home() {
 
                 <div className="form-group">
                     <label htmlFor="player">選手を選択</label>
-                    <p>players件数: {players.length}</p>
 
                     <div className="form-group">
                         <input
