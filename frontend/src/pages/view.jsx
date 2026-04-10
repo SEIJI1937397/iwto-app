@@ -15,7 +15,7 @@ function View(){
     useEffect(() => {
         const fetchFeedbacks = async () =>{
             try{
-                const res = await fetch(`http://localhost:3000/feedback?player_id=${data.playerId}`);
+                const res = await fetch(`https://iwto-app.onrender.com/feedback?player_id=${data.playerId}`);
                 const result = await res.json();
 
                 if (result.status === "success"){

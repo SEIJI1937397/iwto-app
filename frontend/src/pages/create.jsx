@@ -34,7 +34,7 @@ const sendData = async () => {
         }
 
         try {
-            const res = await fetch("http://localhost:3000/feedback", {
+            const res = await fetch("https://iwto-app.onrender.com/players", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -80,7 +80,7 @@ const sendData = async () => {
 
     useEffect(() => {
   const fetchPlayers = async () => {
-    const res = await fetch("http://localhost:3000/players");
+    const res = await fetch("https://iwto-app.onrender.com/players");
     const result = await res.json();
 
     if (result.status === "success") {
@@ -97,7 +97,7 @@ const sendData = async () => {
     );
 
     const getData = async () => {
-  const res = await fetch("http://localhost:3000/feedback");
+  const res = await fetch("https://iwto-app.onrender.com/feedback");
   const data = await res.json();
 
   console.log(data);

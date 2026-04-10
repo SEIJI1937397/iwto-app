@@ -35,7 +35,7 @@ function Home(){
     useEffect(() => {
         const fetchPlayers = async () => {
         try{
-            const res = await fetch("http://localhost:3000/players");
+            const res = await fetch("https://iwto-app.onrender.com/players");
             const result = await res.json();
 
             if(result.status === "success"){
