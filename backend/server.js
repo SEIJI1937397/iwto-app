@@ -1,6 +1,7 @@
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
+import "dotenv/config";
 
 const app = express();
 app.use(cors());
@@ -99,4 +100,23 @@ app.get("/feedback", (req, res) => {
 
 app.listen(3000, () => {
   console.log("http://localhost:3000");
+});
+
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
+);
+
+app.get("/players", async (req, res) => {
+  const { data, error } = await supabase
+    .from("players")
+    .select("*");
+
+  if (error) {
+    return res.json({ status: "error", message: error.message });
+  }
+
+  res.json({ status: "success", data });
 });
