@@ -1,0 +1,99 @@
+body { font-family:"Hiragino Sans","Noto Sans JP",sans-serif; background:#f8f8f8; margin:18px; color:#111; }
+    h2, h3 { text-align:center; margin-bottom:14px; }
+    .wrap { max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:18px; align-items:center; }
+    .input-area { display:flex; flex-direction:column; gap:18px; width:100%; max-width:420px; }
+    .item { background:#fff; padding:12px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+    label { font-size:16px; font-weight:600; margin-bottom:8px; display:block; }
+    input[type="range"] { width:100%; height:36px; accent-color:#007bff; }
+    button { 
+      background:#007bff; color:white; border:none; padding:12px 24px; 
+      font-size:16px; border-radius:10px; cursor:pointer; transition:0.2s;
+    }
+    button:hover { background:#0056b3; }
+    .chartBox { width:100%; max-width:600px; background:#fff; padding:12px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); display:flex; flex-direction:column; gap:12px; align-items:center; }
+    .imagePreview { max-width:100%; border-radius:10px; border:1px solid #eee; background:#fff; padding:6px; }
+    .note { font-size:13px; color:#666; text-align:center; }
+    /*#radarChart { display:none !important; }*/
+    body::before {display: none;}
+    
+    /* 選手選択用のスタイル（index.phpと同じデザイン） */
+    .form-group {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 420px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 20px;
+      color: #1565c0;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .form-group select {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: 2px solid #2196F3;
+      border-radius: 12px;
+      background-color: white;
+      margin-bottom: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 10px rgba(33, 150, 243, 0.06);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232196F3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 50px;
+    }
+    
+    .form-group select:hover {
+      border-color: #1976d2;
+    }
+    
+    .form-group select:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(33,150,243,0.12);
+    }
+    .back-button {
+  margin: 10px 0;
+  padding: 8px 16px;
+  border: none;
+  background: #0b66d0;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #084c9e;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    margin: 100px auto;
+    width: 300px;
+    text-align: center;
+}
+
+.title {
+    color: #0b0c0b;
+}

@@ -1,0 +1,247 @@
+body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f0f8ff 100%);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+      /*overflow: hidden;*/
+    }
+
+    /* 背景の薄いライン（装飾） */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: repeating-linear-gradient(0deg, 
+        transparent, 
+        transparent 50px, 
+        rgba(76, 175, 80, 0.03) 50px, 
+        rgba(76, 175, 80, 0.03) 51px
+      );
+      transform: rotate(45deg);
+      z-index: 1;
+    }
+
+    /* カードコンテナ */
+    .container {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(33, 150, 243, 0.08),
+              0 0 0 1px rgba(255, 255, 255, 0.2);
+  /* ↓これ削除 or 変更 */
+  /* margin: 20px auto; */
+  margin: 0;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+
+    /* タイトル領域（装飾は維持） */
+    .title-container {
+      background: linear-gradient(45deg, #43a047, #4CAF50);
+      margin: -40px -40px 40px;
+      padding: 30px;
+      border-radius: 20px 20px 50% 50% / 20px 20px 30px 30px;
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title-container::before,
+    .title-container::after {
+      content: '🎾';
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.18;
+    }
+
+    .title-container::before {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .title-container::after {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+      font-size: 40px;
+      margin: 0;
+      position: relative;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    /* 見出しの下ライン（装飾） */
+    h2::before,
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+    }
+
+    h2::before {
+      width: 140px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    h2::after {
+      width: 72px;
+      background: #f0e14a; /* テニスボール風のアクセント */
+      bottom: -18px;
+    }
+
+    /* テニスボールの小アイコン（アニメ） */
+    .tennis-ball {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      width: 22px;
+      height: 22px;
+      background: #f0e14a;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+      animation: bounce 2.2s infinite ease-in-out;
+      z-index: 3;
+    }
+
+    .form-group {
+      margin-bottom: 40px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 20px;
+      color: #2e7d32; /* 緑寄りのラベル */
+      text-align: center;
+      font-weight: 600;
+      position: relative;
+    }
+
+    select {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: 2px solid #4CAF50;
+      border-radius: 12px;
+      background-color: white;
+      margin-bottom: 40px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 10px rgba(76, 175, 80, 0.06);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234CAF50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 50px;
+      max-width: 500px;
+    }
+
+    select:hover { border-color: #388e3c; }
+    select:focus { outline: none; box-shadow: 0 0 0 4px rgba(76,175,80,0.12); }
+
+    .button-group {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin-top: 8px;
+      padding: 10px 0;
+      position: relative;
+    }
+
+    .button-group::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+    }
+
+    button {
+      padding: 18px 36px;
+      font-size: 18px;
+      border: none;
+      border-radius: 28px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      min-width: 160px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 指定された配色：上（記録）= グリーン、下（閲覧）= ブルー */
+    button:first-child {
+      background: linear-gradient(135deg, #43a047, #4CAF50);
+      color: white;
+    }
+
+    button:last-child {
+      background: linear-gradient(135deg, #1e88e5, #2196F3);
+      color: white;
+    }
+
+    button:hover { transform: translateY(-3px); }
+    button:active { transform: translateY(1px); }
+
+    #output {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 16px;
+      color: #2e7d32;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 28px; min-height: 480px; }
+      h2 { font-size: 34px; }
+      button { min-width: 100%; }
+      .button-group { flex-direction: column; gap: 12px; }
+    }
+
+    #root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

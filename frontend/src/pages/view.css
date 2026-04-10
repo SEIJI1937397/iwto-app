@@ -1,0 +1,63 @@
+.accordion { max-width:900px; margin:20px auto; }
+    .item { border:1px solid #ddd; margin-bottom:8px; border-radius:6px; overflow:hidden; }
+    .item-header { display:flex; justify-content:space-between; align-items:center; padding:12px; background:#f8f9fa; cursor:pointer; }
+    .item-header .meta { color:#555; font-size:14px }
+        .item-header { display:flex; justify-content:space-between; align-items:center; padding:14px 16px; background:transparent; cursor:pointer; position:relative; padding-left:48px; }
+        /* 開閉インジケータ（三角） */
+        .item-header::after {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 8px solid #666;
+            transition: transform .18s ease, border-left-color .18s ease;
+        }
+        .item.open .item-header::after { transform: translateY(-50%) rotate(90deg); border-left-color: #0b66d0; }
+    .item-content { display:none; padding:12px; background:#fff; }
+    .item.open .item-content { display:block }
+    .detail-grid { display:flex; gap:16px; align-items:flex-start }
+    .chart-box { width: 100%; max-width: 520px; height: 300px; }
+    .text-box { flex:1; }
+    .badge { display:inline-block; padding:4px 8px; background:#eee; border-radius:4px; margin-right:6px; }
+    /* 受け手表示のスタイル */
+    .recipient { max-width:900px; margin:8px auto 18px; padding:10px 14px; background:linear-gradient(90deg,#f0f8ff,#ffffff); border:1px solid #d4e9ff; border-radius:8px; display:flex; gap:12px; align-items:center; }
+    .recipient .name { font-weight:700; color:#0b66d0; font-size:1.05rem; }
+    .recipient .belong { color:#555; }
+    /* レスポンシブ調整 */
+    @media (max-width: 720px) {
+        .detail-grid { flex-direction: column; }
+        .chart-box { width:100%; }
+        .text-box { width:100%; }
+    }
+    /* canvas を親幅にフィットさせる */
+    .chart-box canvas { width:100% !important; height:auto !important; }
+
+    .back-button {
+  margin: 10px 0;
+  padding: 8px 16px;
+  border: none;
+  background: #0b66d0;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #084c9e;
+}
+
+.accordion-header:hover {
+  background: #ddd;
+}
+
+.accordion-content {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
