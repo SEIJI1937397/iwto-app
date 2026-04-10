@@ -13,6 +13,10 @@ function View(){
     console.log("data:", data);
 
     useEffect(() => {
+        console.log("data:", data);
+        console.log("playerId:", data?.playerId);
+        console.log("url:", `https://iwto-app.onrender.com/feedback?player_id=${data?.playerId}`);
+        
         const fetchFeedbacks = async () =>{
             try{
                 const res = await fetch(`https://iwto-app.onrender.com/feedback?player_id=${data.playerId}`);
