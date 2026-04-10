@@ -97,7 +97,7 @@ const sendData = async () => {
     );
 
     const getData = async () => {
-  const res = await fetch("https://iwto-app.onrender.com/feedback");
+  const res = await fetch("https://iwto-app.onrender.com/players");
   const data = await res.json();
 
   console.log(data);
