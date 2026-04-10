@@ -34,7 +34,7 @@ const sendData = async () => {
         }
 
         try {
-            const res = await fetch("https://iwto-app.onrender.com/feedback", {
+            const res = await fetch("https://iwto-app.onrender.com/feedbacks", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -97,7 +97,7 @@ const sendData = async () => {
     );
 
     const getData = async () => {
-  const res = await fetch("https://iwto-app.onrender.com/feedback");
+  const res = await fetch("https://iwto-app.onrender.com/feedbacks");
   const data = await res.json();
 
   console.log(data);
